@@ -1,0 +1,22 @@
+import java.util.regex.Matcher;
+
+public class Regulax2 
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+			String email = "huyCho@yahoo.com.vn";
+			String email2= "nguyenthanhphong9997@gmail.com";
+			System.out.println("Email:" +email);
+			boolean match = email2.matches("[a-zA-Z_0-9]{5,}@[a-z]{5,}.[a-z]{3,}.[a-z]{1,}");
+			boolean match2 = email.matches("[a-zA-Z_0-9]{5,}@[a-z]{3,}.[a-z]{3,}");
+			System.out.println("KEtQua:" + match);
+			System.out.println("KetQua2:"  + match2);
+	
+		}catch (Exception e) {
+			System.out.println("Error. Please check!");
+		}
+		
+	}
+}
