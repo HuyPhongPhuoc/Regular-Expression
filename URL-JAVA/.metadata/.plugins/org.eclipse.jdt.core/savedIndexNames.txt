@@ -1,0 +1,3 @@
+INDEX VERSION 1.129+C:\Users\TOSHIBALAPTOP\Desktop\PTUD\URL-JAVA\.metadata\.plugins\org.eclipse.jdt.core
+2879976378.index
+1880859750.index
