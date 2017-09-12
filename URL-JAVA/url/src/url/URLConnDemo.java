@@ -1,5 +1,7 @@
 package url;
 import java.net.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.*;
 
 public class URLConnDemo {
@@ -7,7 +9,7 @@ public class URLConnDemo {
 	{
 		try
 		{
-		URL url =new URL("http://www.24h.com.vn");
+		URL url =new URL("http://localhost/ThuyStore/index.php");
 		URLConnection urlConnection=url.openConnection();
 		HttpURLConnection connection=null;
 		if(urlConnection instanceof HttpURLConnection)
@@ -20,7 +22,7 @@ public class URLConnDemo {
 			return;
 		}
 		
-		InputStream is = connection.getInputStream();
+		/*InputStream is = connection.getInputStream();
 		FileOutputStream fout = new FileOutputStream("test.html");
 		byte []b = new byte[1024];
 		int len ;
@@ -28,17 +30,35 @@ public class URLConnDemo {
 		while ((len = is.read(b))!=-1){
 			fout.write(b,0,len);
 		}
-		fout.close();
-//		
-//		BufferedReader in= new BufferedReader(
-//				new InputStreamReader(connection.getInputStream()));
-//		String urlString="";
-//		String current;
-//		while((current=in.readLine())!=null)
-//		{
-//			urlString+=current;
-//		}
-//		System.out.println(urlString);
+		fout.close();*/
+		
+		BufferedReader in= new BufferedReader(
+				new InputStreamReader(connection.getInputStream()));
+		String urlString="";
+		String current;
+		while((current=in.readLine())!=null)
+		{
+			urlString+=current;
+	//		System.out.println(urlString);
+			try
+			{
+				Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
+				Matcher matcher = pattern.matcher(current);
+				if (matcher.find()) {
+					System.out.println("Ket qua: " + matcher.group());
+				}
+				
+				
+				
+				
+		
+			}catch (Exception e) {
+				System.out.println("Error. Please check!");
+			}
+			
+			
+		}
+		System.out.println(urlString);
 		}catch(IOException e)
 		{
 			e.printStackTrace();
