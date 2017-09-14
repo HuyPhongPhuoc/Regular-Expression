@@ -9,7 +9,7 @@ public class URLConnDemo {
 	{
 		try
 		{
-		URL url =new URL("http://localhost/ThuyStore/index.php");
+		URL url =new URL("https://subiz.com/blog/tag/email-marketing-vi");
 		URLConnection urlConnection=url.openConnection();
 		HttpURLConnection connection=null;
 		if(urlConnection instanceof HttpURLConnection)
@@ -21,17 +21,7 @@ public class URLConnDemo {
 			System.out.println("Please enter an http URL");
 			return;
 		}
-		
-		/*InputStream is = connection.getInputStream();
-		FileOutputStream fout = new FileOutputStream("test.html");
-		byte []b = new byte[1024];
-		int len ;
-		
-		while ((len = is.read(b))!=-1){
-			fout.write(b,0,len);
-		}
-		fout.close();*/
-		
+	
 		BufferedReader in= new BufferedReader(
 				new InputStreamReader(connection.getInputStream()));
 		String urlString="";
@@ -39,13 +29,14 @@ public class URLConnDemo {
 		while((current=in.readLine())!=null)
 		{
 			urlString+=current;
-	//		System.out.println(urlString);
+
 			try
 			{
 				Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
 				Matcher matcher = pattern.matcher(current);
 				if (matcher.find()) {
-					System.out.println("Ket qua: " + matcher.group());
+				System.out.println("Ket qua: " + matcher.group());
+				urlString=matcher.group();
 				}
 				
 				
@@ -58,11 +49,18 @@ public class URLConnDemo {
 			
 			
 		}
-		System.out.println(urlString);
+//		if(urlString!="")
+//			System.out.println("Kết quả:"+urlString);
+//		else 
+//			System.out.println("Không tìm thấy !!!!");
+//		
+		
+		//System.out.println(urlString);
+		
 		}catch(IOException e)
 		{
 			e.printStackTrace();
 		}
 	}
-
+	
 }
