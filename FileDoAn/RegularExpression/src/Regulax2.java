@@ -1,4 +1,4 @@
-import java.util.regex.Matcher;
+
 
 public class Regulax2 
 {
@@ -7,7 +7,7 @@ public class Regulax2
 		try
 		{
 			
-			String email= "nguyenthanhphong9997@iuh.edu.vn";
+			String email= "tuhuy@gmail.com";
 			System.out.println("Email:" +email);
 			boolean match = email.matches("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
 			boolean match2 = email.matches("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}.[a-z]{1,}");
