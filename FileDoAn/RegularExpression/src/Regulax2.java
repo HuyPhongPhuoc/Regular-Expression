@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+
+=======
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+>>>>>>> 6a20d7ac775a2b3bf53461447479460ea9723e37
 
 public class Regulax2 
 {
@@ -8,7 +12,11 @@ public class Regulax2
 		try
 		{
 			
+<<<<<<< HEAD
+			String email= "tuhuy@gmail.com";
+=======
 			String email= "<h style='font-size:12px;'>Tel: 0886924XXX - Fax: (08).39317XXX - tuhuy@gmail.com </h> <br><br>";
+>>>>>>> 6a20d7ac775a2b3bf53461447479460ea9723e37
 			System.out.println("Email:" +email);
 			boolean match = email.matches("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
 			Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
