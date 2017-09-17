@@ -37,18 +37,22 @@ public class URLConnDemo {
 				if (matcher.find()) {
 				System.out.println("Ket qua: " + matcher.group());
 				urlString=matcher.group();
-				}
-				
-				
-				
-				
-		
+				}				
+									
 			}catch (Exception e) {
 				System.out.println("Error. Please check!");
 			}
 			
 			
 		}
+/*
+		Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
+		Matcher matcher = pattern.matcher(urlString);
+		if (matcher.find()) {
+		System.out.println("Ket qua: " + matcher.group());
+		}
+*/		
+		
 //		if(urlString!="")
 //			System.out.println("Kết quả:"+urlString);
 //		else 
