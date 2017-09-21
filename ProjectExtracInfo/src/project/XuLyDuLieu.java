@@ -54,12 +54,13 @@ public class XuLyDuLieu {
 	 {
 		
 		 String kq="";
-		 Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
+		 Pattern pattern = Pattern.compile("(?<email>[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,})");
 		 Matcher matcher = pattern.matcher(code);
 //		 while(matcher.find(100))
 //		 {
-			 if (matcher.find(100)) {
-				 kq=matcher.group();
+			 while(matcher.find()) {
+				 kq+=matcher.group("email")+" \n";
+				 
 			 }
 	// }
 		 return kq;
@@ -71,7 +72,7 @@ public class XuLyDuLieu {
 		 Pattern pattern = Pattern.compile("[0-9]{10,11}");
 		 Matcher matcher = pattern.matcher(code);
 		 if (matcher.find()) {
-		 System.out.println("Ket qua: " + matcher.group());
+		 System.out.println("Ket qua: " + matcher.group("email"));
 		 }
 		 return kq;
 	 }
