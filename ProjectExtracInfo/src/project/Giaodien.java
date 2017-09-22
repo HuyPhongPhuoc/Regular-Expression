@@ -2,8 +2,11 @@ package project;
 
 
 import java.awt.event.*;
+import java.awt.image.AreaAveragingScaleFilter;
+
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 public class Giaodien implements ActionListener
 {
@@ -57,7 +60,11 @@ public class Giaodien implements ActionListener
 			
 			
 			screen.setBounds(25, 89, 580, 350);
+			JScrollPane jsp = new JScrollPane(screen);
+			jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+			jsp.setPreferredSize(new Dimension(250,250));
 			panel.add(screen);
+	
 		}
 
 		@Override
@@ -77,7 +84,9 @@ public class Giaodien implements ActionListener
 				}else if(comboBox.getSelectedItem()=="Phone") 
 				{
 					clear();
-						screen.append(u.getUrl());
+					String kq=xldl.CheckNumberPhone(xldl.connectUrl(u.getUrl()));
+					screen.append(kq);
+					screen.append(xldl.connectUrl(u.getUrl()));
 				}
 				
 				

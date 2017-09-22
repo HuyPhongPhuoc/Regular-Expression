@@ -44,6 +44,7 @@ public class URLConnDemo {
 				System.out.println("Ket qua: " + matcher.group());
 				urlString=matcher.group();
 				}
+<<<<<<< HEAD
 		/*InputStream is = connection.getInputStream();
 		FileOutputStream fout = new FileOutputStream("test.html");
 		byte []b = new byte[1024];
@@ -54,6 +55,12 @@ public class URLConnDemo {
 		}
 		fout.close();*/
 		
+=======
+				
+				
+				
+				
+>>>>>>> parent of 5b40e21... a
 		
 			}catch (Exception e) {
 				System.out.println("Error. Please check!");
@@ -65,14 +72,6 @@ public class URLConnDemo {
 		
 			
 		}
-/*
-		Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
-		Matcher matcher = pattern.matcher(urlString);
-		if (matcher.find()) {
-		System.out.println("Ket qua: " + matcher.group());
-		}
-*/		
-		
 //		if(urlString!="")
 //			System.out.println("Kết quả:"+urlString);
 //		else 

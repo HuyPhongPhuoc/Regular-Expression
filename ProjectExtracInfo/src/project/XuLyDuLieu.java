@@ -54,25 +54,23 @@ public class XuLyDuLieu {
 	 {
 		
 		 String kq="";
-		 Pattern pattern = Pattern.compile("(?<email>[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,})");
+		 Pattern pattern = Pattern.compile("(?<email>[a-zA-Z_0-9|(\\.|\\_|\\-)]{4,}@[a-z]{2,}.[a-z]{3,})");
 		 Matcher matcher = pattern.matcher(code);
-//		 while(matcher.find(100))
-//		 {
-			 while(matcher.find()) {
-				 kq+=matcher.group("email")+" \n";
-				 
-			 }
-	// }
+		 while(matcher.find()) {
+			 
+				 kq+=matcher.group("email")+" \n";				 
+		 }
+
 		 return kq;
 	 }
 	 public String CheckNumberPhone(String code)
 	 {
 
 		 String kq="";
-		 Pattern pattern = Pattern.compile("[0-9]{10,11}");
+		 Pattern pattern = Pattern.compile("(^(08|09|01|19)[0-9]{1,2}[- .]?[0-9]{2,4}[- .]?[0-9]{2,4})");
 		 Matcher matcher = pattern.matcher(code);
-		 if (matcher.find()) {
-		 System.out.println("Ket qua: " + matcher.group("email"));
+		 while (matcher.find()) {
+			 kq+=matcher.group()+" \n";
 		 }
 		 return kq;
 	 }
