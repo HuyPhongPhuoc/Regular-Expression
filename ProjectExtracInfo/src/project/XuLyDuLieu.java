@@ -67,7 +67,7 @@ public class XuLyDuLieu {
 	 {
 
 		 String kq="";
-		 Pattern pattern = Pattern.compile("(^(08|09|01|19)[0-9]{1,2}[- .]?[0-9]{2,4}[- .]?[0-9]{2,4})");
+		 Pattern pattern = Pattern.compile("((08|09|01|19)[0-9]{1,2}[- .]?[0-9]{2,4}[- .]?[0-9]{2,4})");
 		 Matcher matcher = pattern.matcher(code);
 		 while (matcher.find()) {
 			 kq+=matcher.group()+" \n";

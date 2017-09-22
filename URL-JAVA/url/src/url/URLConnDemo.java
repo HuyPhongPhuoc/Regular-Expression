@@ -14,7 +14,7 @@ public class URLConnDemo {
 		{
 	
 
-		URL url =new URL("https://subiz.com/blog/tag/email-marketing-vi");
+		URL url =new URL("https://cellphones.com.vn/galaxy-s8plus-cty.html");
 
 		URLConnection urlConnection=url.openConnection();
 		HttpURLConnection connection=null;
@@ -38,13 +38,14 @@ public class URLConnDemo {
 
 			try
 			{
-				Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
+				//Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
+				Pattern pattern = Pattern.compile("(^(08|09|01|19)[0-9]{1,2}[- .]?[0-9]{2,4}[- .]?[0-9]{2,4})");
 				Matcher matcher = pattern.matcher(current);
 				if (matcher.find()) {
 				System.out.println("Ket qua: " + matcher.group());
 				urlString=matcher.group();
 				}
-<<<<<<< HEAD
+
 		/*InputStream is = connection.getInputStream();
 		FileOutputStream fout = new FileOutputStream("test.html");
 		byte []b = new byte[1024];
@@ -55,12 +56,7 @@ public class URLConnDemo {
 		}
 		fout.close();*/
 		
-=======
-				
-				
-				
-				
->>>>>>> parent of 5b40e21... a
+
 		
 			}catch (Exception e) {
 				System.out.println("Error. Please check!");
@@ -68,7 +64,7 @@ public class URLConnDemo {
 			
 			
 		
-		System.out.println(urlString);
+		
 		
 			
 		}
@@ -78,7 +74,7 @@ public class URLConnDemo {
 //			System.out.println("Không tìm thấy !!!!");
 //		
 		
-		//System.out.println(urlString);
+		System.out.println(urlString);
 	
 		}catch(IOException e)
 		{

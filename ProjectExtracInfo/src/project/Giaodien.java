@@ -2,11 +2,8 @@ package project;
 
 
 import java.awt.event.*;
-import java.awt.image.AreaAveragingScaleFilter;
-
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 
 public class Giaodien implements ActionListener
 {
@@ -17,7 +14,10 @@ public class Giaodien implements ActionListener
 		JButton btnOk = new JButton("OK");
 	 	JTextField url = new JTextField();
 	 	JTextArea screen = new JTextArea();
-		
+
+	 	
+	 
+	 	
 		/**
 		 * Create the application.
 		 */
@@ -60,9 +60,7 @@ public class Giaodien implements ActionListener
 			
 			
 			screen.setBounds(25, 89, 580, 350);
-			JScrollPane jsp = new JScrollPane(screen);
-			jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-			jsp.setPreferredSize(new Dimension(250,250));
+			screen.setWrapStyleWord(true);
 			panel.add(screen);
 	
 		}
@@ -85,8 +83,9 @@ public class Giaodien implements ActionListener
 				{
 					clear();
 					String kq=xldl.CheckNumberPhone(xldl.connectUrl(u.getUrl()));
+				//	String kq=xldl.CheckNumberPhone();
 					screen.append(kq);
-					screen.append(xldl.connectUrl(u.getUrl()));
+					
 				}
 				
 				
