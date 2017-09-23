@@ -4,6 +4,7 @@ package project;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Container;
 
 public class Giaodien implements ActionListener
 {
@@ -14,6 +15,7 @@ public class Giaodien implements ActionListener
 		JButton btnOk = new JButton("OK");
 	 	JTextField url = new JTextField();
 	 	JTextArea screen = new JTextArea();
+	 	JScrollPane scroll = new JScrollPane(screen);
 
 	 	
 	 
@@ -36,6 +38,7 @@ public class Giaodien implements ActionListener
 			frame.setResizable(true);
 			frame.setBounds(200, 200, 650, 500);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		                   // <-- THIS
 			
 			JPanel panel = new JPanel();
 			frame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -62,8 +65,14 @@ public class Giaodien implements ActionListener
 			screen.setBounds(25, 89, 580, 350);
 			screen.setWrapStyleWord(true);
 			panel.add(screen);
-	
+
+			
+			scroll.setBounds(10, 10, 560, 330); 
+			screen.add(scroll);
+			
 		}
+
+
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
