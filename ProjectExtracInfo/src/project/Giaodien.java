@@ -18,6 +18,11 @@ public class Giaodien implements ActionListener
 	 	JScrollPane scroll = new JScrollPane(screen);
 
 	 	
+	 	
+
+	 
+	 	
+	 	
 	 
 	 	
 		/**
@@ -62,13 +67,15 @@ public class Giaodien implements ActionListener
 			url.setColumns(10);
 			
 			
-			screen.setBounds(25, 89, 580, 350);
-			screen.setWrapStyleWord(true);
-			panel.add(screen);
+	//		screen.setBounds(25, 89, 580, 350);
+		//	screen.setWrapStyleWord(true);
+			//panel.add(screen);10, 10, 100, 200
 
-			
-			scroll.setBounds(10, 10, 560, 330); 
-			screen.add(scroll);
+			scroll.setBounds(25, 89, 580, 350);
+			panel.add(scroll);
+			//frame.getContentPane().add(scroll);
+			//scroll.setBounds(10, 10, 560, 330); 
+			//screen.add(scroll);
 			
 		}
 
