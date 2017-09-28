@@ -36,11 +36,11 @@ public class XuLyDuLieu {
 				}
 				//Đọc html
 				BufferedReader in= new BufferedReader(new InputStreamReader(connection.getInputStream()));
-				
+					
 				String current;
 				while((current=in.readLine())!=null)
 				{
-					KQ+=current;
+					KQ+=current.trim();
 				}
 			} catch (Exception e) {
 				 JOptionPane.showMessageDialog(new JFrame(), e.getMessage(),"Error",
@@ -60,20 +60,45 @@ public class XuLyDuLieu {
 			 
 				 kq+=matcher.group("email")+" \n";				 
 		 }
-
+		 if(kq=="")
+		 {
+			 kq="Không tìm thấy";
+		 }
 		 return kq;
 	 }
 	 public String CheckNumberPhone(String code)
 	 {
 
 		 String kq="";
-		 Pattern pattern = Pattern.compile("((08|09|01|19)[0-9]{1,2}[- .]?[0-9]{2,4}[- .]?[0-9]{2,4})");
+		 Pattern pattern = Pattern.compile("(?<phone>(08|09|01|19|18)[0-9]{1,2}[- .]?[0-9]{2,4}[- .]?[0-9]{2,4})");
 		 Matcher matcher = pattern.matcher(code);
 		 while (matcher.find()) {
-			 kq+=matcher.group()+" \n";
+			 kq+=matcher.group("phone")+" \n";
+		 }
+		 if(kq=="")
+		 {
+			 kq="Không tìm thấy";
 		 }
 		 return kq;
 	 }
-	 
+	 public String CheckProducts(String code)
+	 {
+
+		 String kq="";
+		 String regex="(<!--#region ThÆ°á»�ng-->)(<li>?)(.*?)<h3>(?<name>[^<].*?)(<\\/h3><strong>)(?<rice>[^<].*?)(â‚«<\\/strong>)";
+		 Pattern pattern = Pattern.compile(regex);
+		 Matcher matcher = pattern.matcher(code);
+		 while (matcher.find()) {
+			 kq+=matcher.group("name")+" \n"+"Giá: "+matcher.group("rice")+" VNĐ\n";
+
+		 }
+		 if(kq=="")
+		 {
+			 kq="Không tìm thấy";
+		 }
+		 return kq;
+	 }
+	
+
 
 }

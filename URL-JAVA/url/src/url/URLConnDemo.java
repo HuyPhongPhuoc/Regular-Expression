@@ -14,7 +14,7 @@ public class URLConnDemo {
 		{
 	
 
-		URL url =new URL("https://cellphones.com.vn/galaxy-s8plus-cty.html");
+		URL url =new URL("https://www.thegioididong.com/dtdd-samsung#m:80,2&o:1");
 
 		URLConnection urlConnection=url.openConnection();
 		HttpURLConnection connection=null;
@@ -34,16 +34,16 @@ public class URLConnDemo {
 		String current;
 		while((current=in.readLine())!=null)
 		{
-			urlString+=current;
+			urlString+=current.trim();
 
 			try
 			{
 				//Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");
-				Pattern pattern = Pattern.compile("(^(08|09|01|19)[0-9]{1,2}[- .]?[0-9]{2,4}[- .]?[0-9]{2,4})");
-				Matcher matcher = pattern.matcher(current);
-				if (matcher.find()) {
-				System.out.println("Ket qua: " + matcher.group());
-				urlString=matcher.group();
+				Pattern pattern = Pattern.compile("(<!--#region Thường-->)(<li>?)(.*?)<h3>(?<name>[^<].*?)(</h3><strong>)(?<rice>[^<].*?)(</strong>)");
+				Matcher matcher = pattern.matcher(urlString);
+				while (matcher.find()) {
+				System.out.println("Ket qua: " + matcher.group("name")+ matcher.group("rice"));
+
 				}
 
 		/*InputStream is = connection.getInputStream();

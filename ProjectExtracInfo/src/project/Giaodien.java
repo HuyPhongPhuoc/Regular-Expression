@@ -4,26 +4,18 @@ package project;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Container;
+
 
 public class Giaodien implements ActionListener
 {
 		JFrame frame;
 		JLabel lblNewLabel = new JLabel("URL");
-		String[] chose = { "Email", "Phone", "Fax", "Text", "Image" };
+		String[] chose = { "Email", "Phone", "Fax", "Products", "Image" };
 		JComboBox<String> comboBox = new JComboBox<String>(chose);
 		JButton btnOk = new JButton("OK");
 	 	JTextField url = new JTextField();
 	 	JTextArea screen = new JTextArea();
-	 	JScrollPane scroll = new JScrollPane(screen);
-
-	 	
-	 	
-
-	 
-	 	
-	 	
-	 
+	 	JScrollPane scroll = new JScrollPane(screen); 
 	 	
 		/**
 		 * Create the application.
@@ -99,11 +91,17 @@ public class Giaodien implements ActionListener
 				{
 					clear();
 					String kq=xldl.CheckNumberPhone(xldl.connectUrl(u.getUrl()));
-				//	String kq=xldl.CheckNumberPhone();
+				
 					screen.append(kq);
 					
 				}
-				
+				else if(comboBox.getSelectedItem()=="Products") 
+				{
+					clear();
+					String kq=xldl.CheckProducts(xldl.connectUrl(u.getUrl()));					
+					screen.append(kq);
+					
+				}
 				
 			}
 		}
