@@ -35,7 +35,7 @@ public class URLConnDemo {
 		while((current=in.readLine())!=null)
 		{
 			urlString+=current.trim();
-
+			//"<h1 itemprop=\"name\">(?<name>[^<].*?)<\\/h1>.*?<span.*?>(?<rice>[^<].*?)<\\/span>"//regex laptopno1.com
 			try
 			{
 				//Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,}@[a-z]{2,}.[a-z]{3,}");

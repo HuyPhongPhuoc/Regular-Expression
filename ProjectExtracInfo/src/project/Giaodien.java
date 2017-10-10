@@ -2,6 +2,8 @@ package project;
 
 
 import java.awt.event.*;
+import java.io.IOException;
+
 import javax.swing.*;
 import java.awt.BorderLayout;
 
@@ -100,9 +102,21 @@ public class Giaodien implements ActionListener
 					clear();
 					String kq=xldl.CheckProducts(xldl.connectUrl(u.getUrl()));					
 					screen.append(kq);
-					
+
 				}
-				
+				else if(comboBox.getSelectedItem()=="Image") 
+				{
+					clear();
+					String kq="";
+					try {
+						kq = xldl.CheckImage(xldl.connectUrl(u.getUrl()));
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}					
+					screen.append(kq);
+
+				}
 			}
 		}
 		public void clear()
