@@ -12,7 +12,7 @@ public class Giaodien implements ActionListener
 {
 		JFrame frame;
 		JLabel lblNewLabel = new JLabel("URL");
-		String[] chose = { "Email", "Phone", "Fax", "Products", "Image" };
+		String[] chose = { "Email", "Phone", "Products", "Image" };
 		JComboBox<String> comboBox = new JComboBox<String>(chose);
 		JButton btnOk = new JButton("OK");
 	 	JTextField url = new JTextField();
